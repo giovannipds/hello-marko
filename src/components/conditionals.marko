@@ -1,0 +1,13 @@
+class {
+  onCreate() {
+    this.state = {
+      user: {
+        loggedOut: true
+      }
+    }
+  }
+}
+
+<if(state.user.loggedOut)>
+  <a href="/login">Log in</a>
+</if>
