@@ -1,0 +1,12 @@
+class {
+  onCreate() {
+    this.state = {
+      colors: [ 'red', 'green', 'blue' ]
+    }
+  }
+}
+<ul>
+  <for|color, index| of=state.colors>
+      <li>${index}: ${color}</li>
+  </for>
+</ul>
