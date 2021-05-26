@@ -1,12 +1,12 @@
 class {
   onCreate() {
     this.state = {
-      colors: [ 'red', 'green', 'blue' ]
+      colors: [ 'red', 'red', 'green', 'blue' ]
     }
   }
 }
 <ul>
   <for|color, index| of=state.colors>
-      <li>${index}: ${color}</li>
+    <li key=index>${index}: ${color}</li>
   </for>
 </ul>
