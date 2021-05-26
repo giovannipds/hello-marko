@@ -2,12 +2,30 @@ class {
   onCreate() {
     this.state = {
       user: {
-        loggedOut: true
+        loggedOut: true,
+        trappedForever: false,
+        name: "Giovanni"
       }
+    }
+  }
+
+  logIn() {
+    alert("logIn, please?!");
+    this.state.user = {
+      ...this.state.user,
+      loggedOut: false,
     }
   }
 }
 
 <if(state.user.loggedOut)>
-  <a href="/login">Log in</a>
+  <!-- <a href="/login" on-click="logIn">Log in</a> -->
+  <button on-click("logIn")>Log in</button>
+  Hey ${state.user.loggedOut}!
 </if>
+<else-if(!state.user.trappedForever)>
+  <a href="/logout">Log out</a>
+</else-if>
+<else>
+  Hey ${state.user.name}!
+</else>
