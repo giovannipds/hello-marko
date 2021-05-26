@@ -1,0 +1,7 @@
+class {
+  prevent(event) {
+    event.preventDefault();
+    alert("Default prevent")
+  }
+}
+<a href="//ebay.com" target="_blank" on-click("prevent")>eBay</a>
