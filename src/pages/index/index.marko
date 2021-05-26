@@ -5,21 +5,40 @@
     <conditionals />
   </div> -->
 
-  <lists />
+  <!-- <lists /> -->
 
-  <mouse-mask.container>
+  <match-media|{ mobile, tablet, desktop }|
+    mobile="(max-width: 767px)"
+    tablet="(min-width: 768px) and (max-width: 1024px)"
+    desktop="(min-width: 1025px)"
+  >
+    <if(mobile)>
+      Mobile
+    </if>
+    <else-if(tablet)>
+      Tablet
+    </else-if>
+    <else-if(desktop)>
+      Desktop
+    </else-if>
+    <else>
+      Server handle (no media queries)
+    </else>
+  </match-media>
+
+  <!-- <mouse-mask.container>
     <header>
       <img.logo src="./logo.svg" alt="Marko"/>
     </header>
     <main>
       <hello name="Marko World" />
-      <!-- <app-button /> -->
+      <app-button />
       &nbsp;
       <a href="https://markojs.com/docs/getting-started">
         Learn Marko
       </a>
     </main>
-  </mouse-mask>
+  </mouse-mask> -->
 </app-layout>
 
 style {
