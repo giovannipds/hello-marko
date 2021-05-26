@@ -3,17 +3,24 @@ class {
     this.state = {
       user: {
         loggedOut: true,
-        trappedForever: false,
-        name: "Giovanni"
+        name: null,
       }
     }
   }
 
   logIn() {
-    alert("logIn, please?!");
+    alert("logging it...");
     this.state.user = {
       ...this.state.user,
       loggedOut: false,
+    }
+  }
+
+  setUserName() {
+    const name = prompt("What's your user name?");
+    this.state.user = {
+      ...this.state.user,
+      name,
     }
   }
 }
@@ -21,10 +28,10 @@ class {
 <if(state.user.loggedOut)>
   <!-- <a href="/login" on-click="logIn">Log in</a> -->
   <button on-click("logIn")>Log in</button>
-  Hey ${state.user.loggedOut}!
 </if>
-<else-if(!state.user.trappedForever)>
-  <a href="/logout">Log out</a>
+<else-if(!state.user.name)>
+  <!-- <a href="/logout">Log out</a> -->
+  <button on-click("setUserName")>Set your user Name</button>
 </else-if>
 <else>
   Hey ${state.user.name}!
